@@ -1,0 +1,1 @@
+g++ types.o syntax.o typcheck.o symbols.o error.o lex.o yacc.o print.o quheap.o extern.o eval.o exec.o parse.o options.o debug.o cond.o dump.o plot.o format.o qcl.o  -Lqc -g -pg -DQCL_DEBUG -DQC_DEBUG -L/usr/X11/lib -lplotter -lm -lfl -lqc -lreadline -lncurses  -o qcl

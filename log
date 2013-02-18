@@ -1,0 +1,24 @@
+g++ -c  -Wall -O2 -g -DQCL_DEBUG -DQC_DEBUG -DQCL_PLOT -DQCL_USE_READLINE -DQCL_IRQ -Iqc -DDEF_INCLUDE_PATH="\"/usr/local/lib/qcl\""   -c -o types.o types.cc
+g++ -c  -Wall -O2 -g -DQCL_DEBUG -DQC_DEBUG -DQCL_PLOT -DQCL_USE_READLINE -DQCL_IRQ -Iqc -DDEF_INCLUDE_PATH="\"/usr/local/lib/qcl\""   -c -o syntax.o syntax.cc
+g++ -c  -Wall -O2 -g -DQCL_DEBUG -DQC_DEBUG -DQCL_PLOT -DQCL_USE_READLINE -DQCL_IRQ -Iqc -DDEF_INCLUDE_PATH="\"/usr/local/lib/qcl\""   -c -o typcheck.o typcheck.cc
+g++ -c  -Wall -O2 -g -DQCL_DEBUG -DQC_DEBUG -DQCL_PLOT -DQCL_USE_READLINE -DQCL_IRQ -Iqc -DDEF_INCLUDE_PATH="\"/usr/local/lib/qcl\""   -c -o symbols.o symbols.cc
+g++ -c  -Wall -O2 -g -DQCL_DEBUG -DQC_DEBUG -DQCL_PLOT -DQCL_USE_READLINE -DQCL_IRQ -Iqc -DDEF_INCLUDE_PATH="\"/usr/local/lib/qcl\""   -c -o error.o error.cc
+bison  -t -d -o yacc.cc qcl.y
+g++ -c  -Wall -O2 -g -DQCL_DEBUG -DQC_DEBUG -DQCL_PLOT -DQCL_USE_READLINE -DQCL_IRQ -Iqc -DDEF_INCLUDE_PATH="\"/usr/local/lib/qcl\""   -c -o print.o print.cc
+g++ -c  -Wall -O2 -g -DQCL_DEBUG -DQC_DEBUG -DQCL_PLOT -DQCL_USE_READLINE -DQCL_IRQ -Iqc -DDEF_INCLUDE_PATH="\"/usr/local/lib/qcl\""   -c -o quheap.o quheap.cc
+g++ -c  -Wall -O2 -g -DQCL_DEBUG -DQC_DEBUG -DQCL_PLOT -DQCL_USE_READLINE -DQCL_IRQ -Iqc -DDEF_INCLUDE_PATH="\"/usr/local/lib/qcl\""   -c -o extern.o extern.cc
+g++ -c  -Wall -O2 -g -DQCL_DEBUG -DQC_DEBUG -DQCL_PLOT -DQCL_USE_READLINE -DQCL_IRQ -Iqc -DDEF_INCLUDE_PATH="\"/usr/local/lib/qcl\""   -c -o eval.o eval.cc
+g++ -c  -Wall -O2 -g -DQCL_DEBUG -DQC_DEBUG -DQCL_PLOT -DQCL_USE_READLINE -DQCL_IRQ -Iqc -DDEF_INCLUDE_PATH="\"/usr/local/lib/qcl\""   -c -o exec.o exec.cc
+g++ -c  -Wall -O2 -g -DQCL_DEBUG -DQC_DEBUG -DQCL_PLOT -DQCL_USE_READLINE -DQCL_IRQ -Iqc -DDEF_INCLUDE_PATH="\"/usr/local/lib/qcl\""   -c -o parse.o parse.cc
+g++ -c  -Wall -O2 -g -DQCL_DEBUG -DQC_DEBUG -DQCL_PLOT -DQCL_USE_READLINE -DQCL_IRQ -Iqc -DDEF_INCLUDE_PATH="\"/usr/local/lib/qcl\""   -c -o options.o options.cc
+g++ -c  -Wall -O2 -g -DQCL_DEBUG -DQC_DEBUG -DQCL_PLOT -DQCL_USE_READLINE -DQCL_IRQ -Iqc -DDEF_INCLUDE_PATH="\"/usr/local/lib/qcl\""   -c -o debug.o debug.cc
+g++ -c  -Wall -O2 -g -DQCL_DEBUG -DQC_DEBUG -DQCL_PLOT -DQCL_USE_READLINE -DQCL_IRQ -Iqc -DDEF_INCLUDE_PATH="\"/usr/local/lib/qcl\""   -c -o cond.o cond.cc
+g++ -c  -Wall -O2 -g -DQCL_DEBUG -DQC_DEBUG -DQCL_PLOT -DQCL_USE_READLINE -DQCL_IRQ -Iqc -DDEF_INCLUDE_PATH="\"/usr/local/lib/qcl\""   -c -o dump.o dump.cc
+g++ -c  -Wall -O2 -g -DQCL_DEBUG -DQC_DEBUG -DQCL_PLOT -DQCL_USE_READLINE -DQCL_IRQ -Iqc -DDEF_INCLUDE_PATH="\"/usr/local/lib/qcl\""   -c -o plot.o plot.cc
+g++ -c  -Wall -O2 -g -DQCL_DEBUG -DQC_DEBUG -DQCL_PLOT -DQCL_USE_READLINE -DQCL_IRQ -Iqc -DDEF_INCLUDE_PATH="\"/usr/local/lib/qcl\""   -c -o format.o format.cc
+g++ -c  -Wall -O2 -g -DQCL_DEBUG -DQC_DEBUG -DQCL_PLOT -DQCL_USE_READLINE -DQCL_IRQ -Iqc -DDEF_INCLUDE_PATH="\"/usr/local/lib/qcl\""   -c -o qcl.o qcl.cc
+mv yacc.*?h yacc.h
+g++ -c  -Wall -O2 -g -DQCL_DEBUG -DQC_DEBUG -DQCL_PLOT -DQCL_USE_READLINE -DQCL_IRQ -Iqc -DDEF_INCLUDE_PATH="\"/usr/local/lib/qcl\""   -c -o yacc.o yacc.cc
+flex -olex.cc qcl.lex
+g++ -c  -Wall -O2 -g -DQCL_DEBUG -DQC_DEBUG -DQCL_PLOT -DQCL_USE_READLINE -DQCL_IRQ -Iqc -DDEF_INCLUDE_PATH="\"/usr/local/lib/qcl\""   -c -o lex.o lex.cc
+g++ types.o syntax.o typcheck.o symbols.o error.o lex.o yacc.o print.o quheap.o extern.o eval.o exec.o parse.o options.o debug.o cond.o dump.o plot.o format.o qcl.o  -Lqc -O2 -g -DQCL_DEBUG -DQC_DEBUG -L/usr/X11/lib -lplotter -lm -lfl -lqc -lreadline -lncurses  -o qcl
