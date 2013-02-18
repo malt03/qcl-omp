@@ -76,26 +76,33 @@ termlist& termlist::operator = (const termlist& l) {
 }
 
 void termlist::add(const bitvec& v,const complx& z) {
+  /************add ( z |v> )**************************
+   *機能２つ
+   * 1 : 係数が0の場合、まだtermがないので、listに追加する
+   * 2 : そうでない場合、既存のtermに値を足す
+   **************************************************/
   int h,i,n;
   term *pt;
 
+  //h:termlistの中のvの値が入っている位置
   h=hashfunct1(v);
   while(1) {
-	pt=hash[h];
-	if(!pt) {
-	  if(_nterms>=listlen) {
+	pt=hash[h];							//ptにhの場所のポインタを代入
+
+	if(!pt) {							//vの係数が0だったら新しく作る
+	  if(_nterms>=listlen) {			//もしリストの長さをtermの数が溢れそうになっていたら
 		pt=list;
 		n=_nterms;
 		listlen*=2;
 		hashlen*=2;
 		hashmask=hashlen-1;
 		qc_delarray(hash);
-		newlist();
+		newlist();						//リスト新規作成
 		clear();
-		for(i=0;i<n;i++) add(pt[i]);
-		qc_delarray(pt);
+		for(i=0;i<n;i++) add(pt[i]);	//コピー
+		qc_delarray(pt);				//削除
 		add(v,z);
-	  } else {
+	  } else {							//溢れないようだったらtermを作成してlistの一番後ろに追加
 		list[_nterms].setvect(v);
 		list[_nterms].setampl(z);
 		hash[h]=&list[_nterms];
@@ -103,11 +110,11 @@ void termlist::add(const bitvec& v,const complx& z) {
 	  };
 	  return;
 	};
-	if(pt->vect()==v) {
-	  pt->setampl(pt->ampl()+z);
+	if(pt->vect()==v) {					//vの係数が存在する、既にtermが実在する場合
+	  pt->setampl(pt->ampl()+z);		//値を足してreturn
 	  return;
 	};
-	h+=hashfunct2(v);
+	h+=hashfunct2(v);					//ここまで来てたら検索しなおし？
 	h&=hashmask;
   };
 }
