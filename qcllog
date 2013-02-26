@@ -1,5 +1,32 @@
-QCL Quantum Computation Language (64 qubits, seed 1360915547)
-QCLIB: qc_check failed on condition QCLIB: qc_check failed on condition i+l<=len in bitvec.h:185
-Can't continue. Provoking segfault to simplify backtracking.
-i+l<=len in bitvec.h:185
-Can't continue. Provoking segfault to simplify backtracking.
+1:18.74s user 0.23s system 98% cpu 19.264 total
+2:43.64s user 0.96s system 176% cpu 25.204 total
+3:71.59s user 1.55s system 261% cpu 27.992 total
+4:113.37s user 2.18s system 344% cpu 33.525 total
+5:132.00s user 2.31s system 422% cpu 31.788 total
+6:168.62s user 2.32s system 487% cpu 35.064 total
+7:181.57s user 2.50s system 552% cpu 33.305 total
+8:209.55s user 2.63s system 620% cpu 34.203 total
+9:239.81s user 2.16s system 673% cpu 35.928 total
+10:254.84s user 1.99s system 716% cpu 35.827 total
+11:282.15s user 2.20s system 814% cpu 34.891 total
+12:301.81s user 1.98s system 858% cpu 35.405 total
+13:317.61s user 2.42s system 879% cpu 36.406 total
+14:339.23s user 2.33s system 942% cpu 36.228 total
+15:388.61s user 2.31s system 1081% cpu 36.131 total
+16:392.76s user 2.15s system 1075% cpu 36.710 total
+17:411.09s user 2.47s system 1131% cpu 36.565 total
+18:444.48s user 2.49s system 1209% cpu 36.968 total
+19:456.69s user 2.29s system 1244% cpu 36.891 total
+20:482.13s user 2.32s system 1316% cpu 36.793 total
+21:509.56s user 2.42s system 1378% cpu 37.146 total
+22:539.78s user 2.42s system 1417% cpu 38.251 total
+23:578.92s user 2.65s system 1469% cpu 39.573 total
+24:583.45s user 2.72s system 1497% cpu 39.144 total
+25:589.19s user 2.49s system 1488% cpu 39.747 total
+26:637.36s user 2.64s system 1564% cpu 40.897 total
+27:656.23s user 2.48s system 1569% cpu 41.976 total
+28:674.34s user 2.61s system 1603% cpu 42.205 total
+29:671.87s user 2.85s system 1590% cpu 42.424 total
+30:756.32s user 2.61s system 1653% cpu 45.911 total
+31:770.70s user 2.57s system 1665% cpu 46.433 total
+32:776.77s user 2.65s system 1680% cpu 46.372 total

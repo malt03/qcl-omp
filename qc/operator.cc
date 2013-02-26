@@ -24,7 +24,6 @@ DEBUG( int noperators=0; )
 opOperator::~opOperator() { DEBUG( noperators--; ) }
 
 /* opElementary */
-
 void opElementary::apply(quState& qs) const {
   int i,n;
   terminfo ti;
@@ -36,7 +35,7 @@ void opElementary::apply(quState& qs) const {
   m=~qs.mapmask();
   n=qs.baseterms();
 
-  #pragma omp parallel for
+  //#pragma omp parallel for
   for(i=0;i<n;i++) {
 	terminfo tmp = ti;
 	tmp.mapterm=qs.baseterm(i);
@@ -84,13 +83,17 @@ void opMatrix::addterms(const terminfo& ti) const {
   w=ti.mapterm.vect().getword();
   pt=matrix[w];
   z=ti.mapterm.ampl();
-#pragma omp critical
-  {
-	while(pt->vect().length()) {
-	  ti.pqs->opadd(ti.frame | ti.pqs->unmap(pt->vect()),z*pt->ampl());
-	  pt++;
-	};
-  }
+  while(pt->vect().length()) {
+	bitvec tmp_vec;
+	complx tmp_ampl;
+	tmp_vec = (ti.frame | ti.pqs->unmap(pt->vect()));
+	tmp_ampl = z*pt->ampl();
+	//#pragma omp critical
+	{
+	  ti.pqs->opadd(tmp_vec, tmp_ampl);
+	}
+	pt++;
+  };
 }
 
 opOperator *opMatrix::newclone() const {

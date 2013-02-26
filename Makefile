@@ -72,9 +72,9 @@ QCDIR = qc
 QCLIB = $(QCDIR)/libqc.a
 QCLINC = lib
 
-OPENMP = -fopenmp
+OPENMP = -openmp
 
-#CXX = g++
+CXX = icpc
 #CPP = $(CC) -E
 CXXFLAGS = -c $(ARCHOPT) -Wall $(OPENMP) $(DEBUG) $(PLOPT) $(RLOPT) $(IRQOPT) -I$(QCDIR) -DDEF_INCLUDE_PATH="\"$(QCLDIR)\""
 LDFLAGS = $(ARCHOPT) -L$(QCDIR) $(OPENMP) $(DEBUG) $(PLLIB) -lm -lfl -lqc $(RLLIB) 

@@ -265,7 +265,6 @@ ROUTINE(ext_genperm) {
 
 ROUTINE(ext_bit) {
   int i;
-  quState *qbit;
   PAR_QUSTATE(q,"q");
   opBit *op;
   tComplex I(0,1);
@@ -281,8 +280,10 @@ ROUTINE(ext_bit) {
     case 'T': op=new opBit(1,0,0,sqrt(0.5)+sg*sqrt(0.5)*I); break;
     case '?':
     default: EXTERR("unknown single qubit operator "+def->id());
-  } 
+  }
+  
   for(i=0;i<q->mapbits();i++) {
+	quState *qbit;
     qbit=q->newsubstring(1,i);
     op->apply(*qbit);
     qcl_delete(qbit);

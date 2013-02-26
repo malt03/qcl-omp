@@ -173,7 +173,12 @@ inline void termlist::clear() {
   int i;
 
   _nterms=0;
-  for(i=0;i<hashlen;i++) hash[i]=0;
+  if(hashlen >= 1000000){
+#pragma omp parallel for
+	for(i=0;i<hashlen;i++) hash[i]=0;
+  }else{
+	for(i=0;i<hashlen;i++) hash[i]=0;
+  }
 }
 
 inline int termlist::nterms() const { return _nterms; }

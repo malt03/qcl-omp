@@ -1,0 +1,4 @@
+QCL Quantum Computation Language (64 qubits, seed 1361176303)
+./qcl ../qcl/code/h.qcl  743.16s user 2.68s system 1643% cpu 45.368 total
+QCL Quantum Computation Language (64 qubits, seed 1361176463)
+./qcl ../qcl/code/h.qcl  18.11s user 0.24s system 98% cpu 18.578 total

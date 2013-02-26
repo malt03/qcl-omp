@@ -25,7 +25,7 @@ DEBUG = -g -pg -DQC_DEBUG
 
 #PRGOPT = -DQC_USE_RAND48
 
-OPENMP = -fopenmp
+OPENMP = -openmp
 
 CXXFLAGS = $(ARCHOPT) -c -pedantic -Wall $(OPENMP) $(DEBUG) $(PRGOPT)
 
@@ -34,6 +34,8 @@ LDFLAGS = $(ARCHOPT) -L. -lm -lqc
 FILESCC = bitvec.cc terms.cc qustates.cc operator.cc
 FILESH = bitvec.h terms.h qustates.h operator.h qc.h
 SOURCE = $(FILESCC) $(FILESH) shor.cc Makefile
+
+CXX = icpc
 
 all: libqc.a
 
