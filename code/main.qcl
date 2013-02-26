@@ -1,0 +1,1 @@
+include "grover.qcl";grover(524288);

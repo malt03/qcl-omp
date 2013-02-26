@@ -1,0 +1,19 @@
+qureg a[1];
+qureg b[1];
+qureg c[1];
+
+reset;
+Rot(pi/6, a);
+dump;
+
+
+H(b);
+dump;
+CNot(c,b);
+CNot(b,a);
+H(a);
+
+measure a;
+measure b;
+
+dump;
